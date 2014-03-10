@@ -1,0 +1,45 @@
+<html>
+<head>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"></link>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <style>
+    .img {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="padding-top: 20px">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/search">Shipwrecked</a>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-xs-12">
+        <a href="/view/{{ ship.name }}" class="thumbnail">
+          <div class="img" style="background-image: url({{ ship.image }}); background-size: cover;"></div>
+        </a>
+      </div>
+      <div class="col-xs-6">
+        <h1>{{ ship.name }}</h1>
+      </div>
+      <div class="col-xs-6">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span><strong>Capacity: </strong>{{ ship.capacity }} People</span>
+          </li>
+          <li class="list-group-item">
+            <span><strong>Speed: </strong>{{ ship.speed }} MPH</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
