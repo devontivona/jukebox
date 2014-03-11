@@ -17,9 +17,10 @@ class Song():
   def __repr__(self):
     return self.name
 
-token = os.environ.get('ECHONEST_TOKEN')
-if token == None:
-  token = open("ECHONEST_TOKEN").read().replace('\n','')
+# token = os.environ.get('ECHONEST_TOKEN')
+# if token == None:
+#   token = open("ECHONEST_TOKEN").read().replace('\n','')
+token = "FUFNWYIA18AB8IL8B"
 
 @app.route('/')
 def index():
