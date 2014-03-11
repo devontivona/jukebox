@@ -23,6 +23,9 @@ if token == None:
 
 @app.route('/')
 def index():
+#data=json.load(urllib2.urlopen("http://developer.echonest.com/api/v4/playlist/basic?api_key="+key+"&artist="+"artist"+"&format=json&results=20&type=artist-radio"))
+#data=json.load(urllib2.urlopen("http://developer.echonest.com/api/v4/playlist/basic?api_key="+key+"&genre="+"artist"+"&format=json&results=20&type=genre-radio"))
+#data=json.load(urllib2.urlopen("http://developer.echonest.com/api/v4/playlist/basic?api_key="+key+"&song="+"artist"+"&format=json&results=20&type=song-radio"))
   connection = httplib.HTTPConnection('developer.echonest.com')
   artist = urllib.quote("Britney Spears")
   connection.request('GET', '/api/v4/artist/similar?api_key={0}&name={1}'.format(token, artist))
