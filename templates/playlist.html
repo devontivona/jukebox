@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script></head>
+<body data-spy="scroll" data-target=".navbar-example">
+  <div class="container">
+  <!--nav bar-->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Courses</a></li>
+            <li class="active"><a  href="#work">Professors</a></li>
+            <li><a href="#">Rooms</a></li>
+            <li class="dropdown">
+              <a href="#class" class="dropdown-toggle" data-toggle="dropdown">Other<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div><!-- /.container-fluid -->
+    </nav>
+  <!--panels-->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">  <!-- row 1 -->
+        <div class="col-s-12">
+          <form class="form-search">
+    <div class="input-append">
+        <input type="text" class="span2 search-query">
+        <button type="submit" class="btn">Search</button>
+    </div>
+</form>
+        <div class="span3">
+      <h2>Professors</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Alan Greenspan --- Room HUMN105</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Don King --- Room HUMN106</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Gayle King --- Room HUMN107</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Julie Andrews --- Room HUMN108</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Miley Cyrus --- Room HUMN110</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Pope Francis --- Room HUMN109</td>
+        </tr>
+      </tbody>
+    </table>
+
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+        </div>  
+      </div> <!--panel-default-->
+    </div> <!--col-md-3-->
+  </div> <!--resume items-->
+  
+
+
+
+
+</div>
+<script>
+   $('body').scrollspy({ target: '.navbar-example' })
+</script>
+</body>
+</html>
