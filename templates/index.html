@@ -5,36 +5,40 @@
   <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <style>
-
+    .header {
+      text-align: center;
+      width: 100%;
+      background: black;
+      padding: 10px;
+      color: white;
+      margin-bottom: 15px;
+    }
+    h4 {text-align:center}
+    h3 {text-align:center}
   </style>
 </head>
 <body>
-  <div class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Jukebox</a>
-      </div>
-    </div>
+  <div class="header" role="navigation">
+    <h4>Jukebox</h4>
   </div>
   <div class="container">
     <div class = "col-xs-12">
       <form action="/" method="get">
         <div class="form-group">
-          <label for="exampleInputEmail1">Build Playlist</label>
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Song, Artist or Genre" name="search" value="{{search}}">
         </div>
       </form>
     </div>
     <div class="row">
-    {% if songs != None %}
-      {% for song in songs %}
-        <div class="col-xs-12">
-          <p>{{ song.name }}</p>
-          <span class="label label-primary">{{song.artist}}</span>
-        </div>
-      {% endfor %}
+    {% if songs != None and songs|length > 0 %}
+      <table class="table table-striped">
+        {% for song in songs %}
+          <tr>
+            <th><h4><b>{{ song.name }}</b><i> {{song.artist}}</i></h4></th>
+          </tr>
+        {% endfor %}
+      </table>
     {% endif %}
-    </ul>
   </div>
 </body>
 </html>
