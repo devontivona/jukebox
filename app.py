@@ -23,6 +23,7 @@ if token == None:
 
 @app.route('/')
 def index():
+  search = request.args.get('search')
   connection = httplib.HTTPConnection('developer.echonest.com')
   artist = urllib.quote("Britney Spears")
   connection.request('GET', '/api/v4/artist/similar?api_key={0}&name={1}'.format(token, artist))
