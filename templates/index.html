@@ -5,31 +5,32 @@
   <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <style>
-    .img {
-      width: 100%;
-      height: 0;
-      padding-top: 100%;
-    }
-    .thumbnail {
-      margin-bottom: 10px;
-    }
-    p {
-      margin-bottom: 00px;
-    }
-    .col-xs-3 {
-      padding-bottom: 20px;
-    }
+
   </style>
 </head>
 <body>
-  <div class="container" style="padding-top: 20px">
+  <div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Jukebox</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class = "col-xs-12">
+      <form action="/" method="get">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Build Playlist</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Song, Artist or Genre" name="search" value="{{search}}">
+        </div>
+      </form>
+    </div>
     <div class="row">
     {% if songs != None %}
       {% for song in songs %}
         <div class="col-xs-12">
           <p>{{ song.name }}</p>
-          <span class="label label-primary">{{song.name}}</span>
-          <span class="label label-primary">{{song.name}}</span>
+          <span class="label label-primary">{{song.artist}}</span>
         </div>
       {% endfor %}
     {% endif %}

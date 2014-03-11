@@ -23,13 +23,21 @@ if token == None:
 
 @app.route('/')
 def index():
-  search = request.args.get('search')
+  search = request.args.get('search').decode('utf-8')
+
+  # data=json.load(urllib2.urlopen("http://developer.echonest.com/api/v4/playlist/basic?api_key="+key+"&artist="+"artist"+"&format=json&results=20&type=artist-radio"))
+  # data=json.load(urllib2.urlopen("http://developer.echonest.com/api/v4/playlist/basic?api_key="+key+"&genre="+"artist"+"&format=json&results=20&type=genre-radio"))
+  # data=json.load(urllib2.urlopen("http://developer.echonest.com/api/v4/playlist/basic?api_key="+key+"&song="+"artist"+"&format=json&results=20&type=song-radio"))
+
   connection = httplib.HTTPConnection('developer.echonest.com')
-  artist = urllib.quote("Britney Spears")
-  connection.request('GET', '/api/v4/artist/similar?api_key={0}&name={1}'.format(token, artist))
+  connection.request('GET', '/api/v4/playlist/basic?api_key={0}&artist={1}&format=json&results=10&type=artist-radio'.format(token, search))
   response = connection.getresponse()
-  print(response.read().decode())
-  return render_template('index.html', songs = None)
+  songs_dictionary = json.loads(response.read().decode())['response']['songs']
+  songs = []
+  print(songs)
+  for song_details in songs_dictionary:
+    songs.append(Song(song_details['title'], song_details['artist_name']))
+  return render_template('index.html', songs = songs, search = search)
 
 @app.route('/<name>')
 def view(name=None):
